@@ -1,113 +1,116 @@
+"use client";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-export default function Home() {
+const LandingPage = () => {
+  const router = useRouter();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <div className="min-h-screen bg-gray-50">
+      {/* Navbar */}
+      <nav className="p-6 bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <div className="flex items-center">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src="/logo.png"
+              width={40}
+              height={40}
+              alt="Platform Logo"
+              className="rounded-lg"
             />
-          </a>
+            <span className="ml-3 text-xl font-bold text-gray-800">
+              National Livestock Traceability
+            </span>
+          </div>
+          <button
+            onClick={() => router.push("/auth/sign-in")}
+            className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors"
+          >
+            Sign In
+          </button>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <div className="py-20 bg-gradient-to-t from-green-600 to-green-700 text-white">
+        <div className="max-w-7xl mx-auto text-center px-4">
+          <h1 className="text-5xl font-bold mb-6">
+            Welcome to the National Livestock Traceability System
+          </h1>
+          <p className="text-xl text-gray-200 mb-8">
+            A secure and efficient platform for managing livestock health, ownership, and compliance.
+          </p>
+          <button
+            onClick={() => router.push("/auth/sign-in")}
+            className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+          >
+            Get Started
+          </button>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      {/* Features Section */}
+      <div className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Key Features
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 p-6 rounded-lg shadow-sm text-center">
+              <h3 className="text-xl font-semibold mb-4">Livestock Tracking</h3>
+              <p className="text-gray-600">
+                Track livestock movements and health status in real-time.
+              </p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg shadow-sm text-center">
+              <h3 className="text-xl font-semibold mb-4">Health Certificates</h3>
+              <p className="text-gray-600">
+                Generate and verify health certificates for livestock.
+              </p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg shadow-sm text-center">
+              <h3 className="text-xl font-semibold mb-4">Compliance Management</h3>
+              <p className="text-gray-600">
+                Ensure compliance with national livestock regulations.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+      {/* Testimonials Section */}
+      <div className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            What Our Users Say
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <p className="text-gray-600 mb-4">
+                This platform has revolutionized how we manage livestock. Its efficient, secure, and easy to use.
+              </p>
+              <p className="text-gray-800 font-semibold">— John Doe, Farmer</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <p className="text-gray-600 mb-4">
+                The health certificate feature is a game-changer. It saves us so much time and effort.
+              </p>
+              <p className="text-gray-800 font-semibold">— Jane Smith, Veterinarian</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
+
+      {/* Footer */}
+      <footer className="py-8 bg-gray-800 text-white">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-gray-400">
+            © {new Date().getFullYear()} National Livestock Traceability System. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
   );
-}
+};
+
+export default LandingPage;
