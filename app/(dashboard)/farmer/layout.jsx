@@ -44,14 +44,14 @@ const items = [
     getItem('Add Medical Records', './farmer/livestock/medical-records/create-new', <PlusOutlined />),
 
   ]),
-  getItem('Livestock in Transit', '/farmer/livestock-in-transit', <CarOutlined />, [
-    getItem('View Livestock in Transit', '/farmer/livestock-in-transit/view', <EyeOutlined />),
-    getItem('Request Ownership Transfer', '/farmer/livestock-in-transit/transfer', <SyncOutlined />),
+  getItem('Livestock in Transit', './farmer/livestock/intransit', <CarOutlined />, [
+    getItem('View Livestock in Transit', './farmer/livestock/intransit', <EyeOutlined />),
+    getItem('Request Ownership Transfer', './farmer/livestock/intransit/transfer', <SyncOutlined />),
   ]),
-  getItem('Insurance', '/farmer/insurance', <InsuranceOutlined />, [
-    getItem('View Insurance', '/farmer/insurance/view', <EyeOutlined />),
-    getItem('Validate Insurance', '/farmer/insurance/validate', <CheckCircleOutlined />),
-    getItem('Request Insurance', '/farmer/insurance/request', <SafetyOutlined />),
+  getItem('Insurance', './farmer/insurance', <InsuranceOutlined />, [
+    getItem('View Insurance', './farmer/insurance/view', <EyeOutlined />),
+    getItem('Validate Insurance', './farmer/insurance/validate', <CheckCircleOutlined />),
+    getItem('Request Insurance', './farmer/insurance/request', <SafetyOutlined />),
   ]),
 ];
 
@@ -123,10 +123,10 @@ const App = ({ children }) => {
         </Header>
         <Content
           style={{
-            margin: '16px',
+            margin: '5px',
             background: colorBgContainer,
             borderRadius: borderRadiusLG,
-            padding: '24px',
+            padding: '20px',
             backgroundColor: '#f0f2f5',
           }}
         >
